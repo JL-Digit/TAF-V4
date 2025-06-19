@@ -1,0 +1,16 @@
+{
+  "name": "Mes Tâches",
+  "short_name": "Tâches",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "description": "Un gestionnaire de tâches intelligent.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

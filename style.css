@@ -1,0 +1,204 @@
+/* --- Réinitialisation et configuration de base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #4f4f4f;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* --- Conteneur principal --- */
+.container {
+    width: 100%;
+    max-width: 750px; /* Légèrement plus grand pour la nouvelle colonne */
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.app-header .material-icons {
+    font-size: 36px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* --- Formulaire d'ajout --- */
+.add-task-panel {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+#addButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+#addButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* --- En-tête de la liste de tâches --- */
+.task-list-header {
+    display: flex;
+    padding: 0 15px 10px 65px; /* Aligné avec les tâches */
+    font-weight: 600;
+    color: #888;
+    border-bottom: 2px solid #eee;
+    font-size: 14px;
+}
+
+.header-col-main { flex: 1; }
+.header-col-priority { flex-basis: 110px; text-align: center; }
+.header-col-actions { flex-basis: 50px; text-align: center; }
+
+/* --- Liste des tâches --- */
+#taskList {
+    list-style-type: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s, opacity 0.5s;
+}
+.task-item:hover {
+    background-color: #f8f9fa;
+}
+
+.task-col-checkbox {
+    margin-right: 15px;
+}
+
+.task-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #007bff;
+}
+
+.task-col-main { flex: 1; }
+.task-text { font-size: 16px; }
+
+.task-details {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.task-col-priority {
+    flex-basis: 110px;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- NOUVELLE COLONNE ACTIONS --- */
+.task-col-actions {
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn {
+    cursor: pointer;
+    color: #bbb;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.delete-btn:hover {
+    color: #e74c3c; /* Rouge */
+    transform: scale(1.2);
+}
+
+.priority-level {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+/* --- Styles pour les tâches complétées --- */
+.task-item.completed {
+    opacity: 0.6;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* --- Couleurs des priorités --- */
+.priority-haute { background-color: #e74c3c; }
+.priority-moyenne { background-color: #f39c12; }
+.priority-basse { background-color: #27ae60; }
+.priority-default { background-color: #bdc3c7; }
